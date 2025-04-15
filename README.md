@@ -29,25 +29,13 @@ docker --version
 docker compose version
 ▶️ Starting Services
 Clone the backend repository and run Docker:
-
-bash
-Copy
-Edit
 git clone https://github.com/Yeeoy/microservice-tourism-ecosystem-api.git
 cd microservice-tourism-ecosystem-api
 Start the services:
 
 Windows:
-
-bash
-Copy
-Edit
 docker-compose up --build
 Mac:
-
-bash
-Copy
-Edit
 docker compose up --build
 💡 If permission issues occur on Mac, try with sudo.
 
@@ -73,28 +61,16 @@ Docs: /api/[service-name]/docs/
 Admin: /api/[service-name]/admin/
 
 Example:
-
-bash
-Copy
-Edit
 Auth Docs: http://localhost:8000/api/customUser/docs/
 Auth Admin: http://localhost:8000/api/customUser/admin/
 🛑 Stopping Services
 Press Ctrl + C in your terminal
 
 Or run:
-
-bash
-Copy
-Edit
 docker compose down
 🔐 Authentication
 The backend uses JWT (JSON Web Tokens).
 To access protected endpoints, include the token in your request header:
-
-makefile
-Copy
-Edit
 Authorization: Bearer <your_jwt_token>
 🛠️ Backend Project Details
 Each microservice has its own Django project and Dockerfile
@@ -119,9 +95,6 @@ Add a Dockerfile
 Update docker-compose.yml and nginx.conf
 
 🧪 Running Backend Tests
-bash
-Copy
-Edit
 cd [service-name]
 python manage.py test
 🎨 Frontend Setup (React + Vite)
@@ -131,23 +104,13 @@ Node.js (v16+)
 npm or yarn
 
 🚀 Run Locally
-bash
-Copy
-Edit
 git clone https://github.com/your-username/tourism-frontend.git
 cd tourism-frontend
 npm install
 Make sure the backend API URL in src/api/index.ts is set correctly, e.g.:
-
-ts
-Copy
-Edit
 const BASE_URL = 'http://localhost:8000/api';
-Start the frontend:
 
-bash
-Copy
-Edit
+Start the frontend:
 npm run dev
 Frontend runs at http://localhost:3000.
 
