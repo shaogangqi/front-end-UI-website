@@ -27,16 +27,23 @@ The backend services are containerized using Docker and Docker Compose. To run t
 ```bash
 docker --version
 docker compose version
+```
 ▶️ Starting Services
 Clone the backend repository and run Docker:
+```bash
 git clone https://github.com/Yeeoy/microservice-tourism-ecosystem-api.git
 cd microservice-tourism-ecosystem-api
+```
 Start the services:
 
 Windows:
+```bash
 docker-compose up --build
+```
 Mac:
+```bash
 docker compose up --build
+```
 💡 If permission issues occur on Mac, try with sudo.
 
 🔗 Accessing the Backend APIs
