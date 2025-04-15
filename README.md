@@ -1,85 +1,163 @@
-# 🌏 Tourism App - Frontend (React + Vite)
+# 🌐 Tourism App - Frontend (React + Vite)
 
-This is the frontend project for the **Tourism App**, built using **React**, **Vite**, **TypeScript**, and **Material UI**. It is part of a microservice architecture for a tourism ecosystem.
+This is the **frontend** for the Tourism Ecosystem application, built using **React**, **TypeScript**, **Vite**, and **Material UI**. This app provides a user-friendly interface for exploring accommodations, restaurants, events, transportation, and more.
 
-👉 The backend API repository can be found here:  
-🔗 [Tourism Ecosystem Backend](https://github.com/Yeeoy/microservice-tourism-ecosystem-api)
+👉 The **backend** microservice repository can be found here:  
+🔗 [Tourism Backend (API)](https://github.com/Yeeoy/microservice-tourism-ecosystem-api)
 
 ---
 
-## 🚀 Getting Started
+## 📦 Backend Setup (Docker Compose)
 
-### 1. Clone the Repository
+The backend services are containerized using Docker and Docker Compose. To run the backend services locally:
 
+### 🐳 Installing Docker & Docker Compose
+
+**Windows**:
+- Download from [Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/)
+- Install and follow instructions
+- Docker starts automatically after installation
+
+**Mac**:
+- Download from [Docker Desktop for Mac](https://www.docker.com/products/docker-desktop/)
+- Open the `.dmg` file and drag Docker to the Applications folder
+- Launch Docker and allow required permissions
+
+**Verify Installation** (Terminal / PowerShell):
 ```bash
-git clone https://github.com/your-username/tourism-frontend.git
-cd tourism-frontend
+docker --version
+docker compose version
+▶️ Starting Services
+Clone the backend repository and run Docker:
 
-2. Install Dependencies
 bash
 Copy
 Edit
+git clone https://github.com/Yeeoy/microservice-tourism-ecosystem-api.git
+cd microservice-tourism-ecosystem-api
+Start the services:
+
+Windows:
+
+bash
+Copy
+Edit
+docker-compose up --build
+Mac:
+
+bash
+Copy
+Edit
+docker compose up --build
+💡 If permission issues occur on Mac, try with sudo.
+
+🔗 Accessing the Backend APIs
+Base URL: http://localhost:8000
+
+Auth Service: /api/customUser/
+
+Accommodation: /api/accommodation/
+
+Restaurants: /api/restaurant/
+
+Local Transportation: /api/local-transportation/
+
+Events: /api/event-organizers/
+
+Information Center: /api/information-center/
+
+API Docs & Admin Interface:
+
+Docs: /api/[service-name]/docs/
+
+Admin: /api/[service-name]/admin/
+
+Example:
+
+bash
+Copy
+Edit
+Auth Docs: http://localhost:8000/api/customUser/docs/
+Auth Admin: http://localhost:8000/api/customUser/admin/
+🛑 Stopping Services
+Press Ctrl + C in your terminal
+
+Or run:
+
+bash
+Copy
+Edit
+docker compose down
+🔐 Authentication
+The backend uses JWT (JSON Web Tokens).
+To access protected endpoints, include the token in your request header:
+
+makefile
+Copy
+Edit
+Authorization: Bearer <your_jwt_token>
+🛠️ Backend Project Details
+Each microservice has its own Django project and Dockerfile
+
+Main configuration files:
+
+docker-compose.yml: Defines all microservices
+
+nginx.conf: Configures routing between services
+
+[service]/Dockerfile: Docker config for each service
+
+[service]/[service]/settings.py: Django settings
+
+➕ Adding New Microservices
+Create a new folder at root
+
+Initialize Django project/app
+
+Add a Dockerfile
+
+Update docker-compose.yml and nginx.conf
+
+🧪 Running Backend Tests
+bash
+Copy
+Edit
+cd [service-name]
+python manage.py test
+🎨 Frontend Setup (React + Vite)
+🔧 Requirements
+Node.js (v16+)
+
+npm or yarn
+
+🚀 Run Locally
+bash
+Copy
+Edit
+git clone https://github.com/your-username/tourism-frontend.git
+cd tourism-frontend
 npm install
-3. Configure the API URL
-Edit the src/api/index.ts or .env file to make sure the backend API URL is correct. For example:
+Make sure the backend API URL in src/api/index.ts is set correctly, e.g.:
 
 ts
 Copy
 Edit
-const BASE_URL = 'http://localhost:5000/api'; // Update with your backend URL
-4. Run the Development Server
+const BASE_URL = 'http://localhost:8000/api';
+Start the frontend:
+
 bash
 Copy
 Edit
 npm run dev
-This will start the development server, and you can access the application at http://localhost:3000 in your browser.
+Frontend runs at http://localhost:3000.
 
-📁 Project Structure
-cpp
-Copy
-Edit
-├── src
-│   ├── api             // API request files
-│   ├── components      // Reusable components
-│   ├── pages           // Page components
-│   ├── App.tsx
-│   └── main.tsx
-└── public              // Static assets
-🛠️ Tech Stack
-React + Vite
+🧩 Frontend Tech Stack
+React
+
+Vite
 
 TypeScript
 
-Material UI (MUI)
+Material UI
 
 React Router DOM
-
-📦 Backend Setup
-Please visit the backend repository for instructions on how to set up and run the backend server.
-
-📃 License
-MIT License
-
-markdown
-Copy
-Edit
-
-### Key Sections:
-
-- **Project Introduction**: Describes the project as the frontend part of the tourism app, which uses React, Vite, and Material UI.
-- **Backend API URL**: Links to the backend repository, so users know where to access the backend code.
-- **Setup Instructions**: Guides users through cloning the repo, installing dependencies, configuring the API URL, and running the project locally.
-- **Project Structure**: Explains the directory layout and where to find different parts of the code.
-- **Tech Stack**: Lists the technologies used in the project.
-- **Backend Setup**: Points users to the backend repo for further instructions.
-- **License**: Adds a license section to specify the terms of use.
-
-Feel free to customize it further if needed, but this should serve as a solid base for your front-end repository's `README.md`.
-
-
-
-
-
-
-
-
