@@ -92,7 +92,7 @@ nginx.conf: Configures routing between services
 
 [service]/[service]/settings.py: Django settings
 
-➕ Adding New Microservices
+Adding New Microservices
 Create a new folder at root
 
 Initialize Django project/app
